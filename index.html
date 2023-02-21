@@ -1,64 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="index.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+  <script src="index.js" defer></script>
 </head>
+
 <body>
-    <h1 style="text-align: center;">JS-Handson 5</h1>
-    <h1 style="text-align: center;">Strings</h1>
-    <h3>1. You are given a string S, and your task is to return an array B(having a size of 2), where B[0] contains the count of character A (uppercase) in string S and B[1] contains the count of character D (uppercase) in string S.</h3>
-    <h3>Source Code:</h3>
-    <pre>
-        const countCharacters = (S) => 
-        {
-            let count=0;
-            let sum=0;
-            let B=[];
-            for(let i=0;i&lt;S.length;i++){
-              if(S[i]==="A"){
-                count++;
-              }
-              else if(S[i]==="D"){
-                sum++;
+  <h1 style="text-align: center;">JS-Handson 5</h1>
+  <h1 style="text-align: center;">Strings</h1>
+  <h3>1. You are given a string S, and your task is to return an array B(having a size of 2), where B[0] contains
+    the
+    count of character A (uppercase) in string S and B[1] contains the count of character D (uppercase) in string S.
+  </h3>
+  <div class="problem">
+    <div class="quetion">
+      <h3>Source Code:</h3>
+      <pre>
+      const countCharacters = (S) => 
+      {
+        let count=0;
+        let sum=0;
+        let B=[];
+        for(let i=0;i&lt;S.length;i++){
+          if(S[i]==="A"){
+            count++;
+          }
+          else if(S[i]==="D"){
+            sum++;
               }
             }
             B.push(count);
             B.push(sum);
             return B;
-        }; 
-    </pre>
-    <h3>2. Tina is given a string  S which contains the first letter of all the student names in her class. She got a curiosity to check how many people have their names starting from the same alphabet. So given a string  S , she decided to write a code that finds out the count of characters that occur more than once in the string.</h3>
+          }; 
+        </pre>
+    </div>
+    <div class="practical">
+      <label for="word">type sentence u want to test</label>
+      <input id="inOfCountChar" class="input" type="text" />
+      <button onclick="countCharactersFun()">Run Code</button>
+      <div class="output" id="outOfCountChar">
+        <p>Output</p>
+      </div>
+    </div>
+  </div>
+  <div class="quetion">
+
+    <h3>2. Tina is given a string S which contains the first letter of all the student names in her class. She got a
+      curiosity to check how many people have their names starting from the same alphabet. So given a string S , she
+      decided to write a code that finds out the count of characters that occur more than once in the string.</h3>
     <h3>Source Code:</h3>
     <pre>
-      var Count_Occ = (s) => 
-      {
-        let newstr="";
-        s=s.toLowerCase().split("").sort().join("");
-        for(let i=0;i&lt;s.length-1;i++){
-          let count=0;
-          for(let j=i+1;j&lt;s.length;j++){
-            if(s[i]===s[j]){
-              count++;
+        var Count_Occ = (s) => 
+        {
+          let newstr="";
+          s=s.toLowerCase().split("").sort().join("");
+          for(let i=0;i&lt;s.length-1;i++){
+            let count=0;
+            for(let j=i+1;j&lt;s.length;j++){
+              if(s[i]===s[j]){
+                count++;
+              }
+            }
+            if(count>0 && ! newstr.includes(s[i])){
+              newstr+=s[i];
+              newstr+=count+1;
             }
           }
-          if(count>0 && ! newstr.includes(s[i])){
-            newstr+=s[i];
-            newstr+=count+1;
-          }
-        }
-        return newstr;
-      };
+          return newstr;
+        };
         
-    </pre>
-    <h3>3. You are given a string S containing both uppercase and lowercase letters. You need to find out the number of vowels in the given string.</h3>
-    <h3>Source Code:</h3>
-    <pre>
-        var Count_Vowels= (S) => 
-        {
+      </pre>
+  </div>
+  <h3>3. You are given a string S containing both uppercase and lowercase letters. You need to find out the number of
+    vowels in the given string.</h3>
+  <h3>Source Code:</h3>
+  <pre>
+          var Count_Vowels= (S) => 
+          {
             let count=0;
             for(let i=0;i&lt;S.length;i++){
               if(S[i]=="a" || S[i]=="e" || S[i]=="i" || S[i]=="o" || S[i]=="u" || S[i]=="A" || S[i]=="E" || S[i]=="I" || S[i]=="O" || S[i]=="U" ){
@@ -68,26 +92,29 @@
             return count;
         };  
     </pre>
-    <h3>4. You are given two strings S1 and S2 (containing both uppercase and lowercase letters), You need to retrun a string which is the concatenation of both the given strings. </h3>
-    <h3>Source Code:</h3>
-    <pre>
+  <h3>4. You are given two strings S1 and S2 (containing both uppercase and lowercase letters), You need to retrun a
+    string which is the concatenation of both the given strings. </h3>
+  <h3>Source Code:</h3>
+  <pre>
         var Concatenate_Strings = (S1, S2) => 
         {
             return S1+S2;  
         }; 
     </pre>
-    <h3>5. You are given a string S, and your task is to return the length of the string S.</h3>
-    <h3>Source Code:</h3>
-    <pre>
+  <h3>5. You are given a string S, and your task is to return the length of the string S.</h3>
+  <h3>Source Code:</h3>
+  <pre>
         const findLength = (S) => 
         {
             return S.length;  
         };
     </pre>
-    <h3>6. You are given a string S consisting of two letters A and D,where each character represent the winner of N games played between Aditya and Danish, where letter A represents the win of Aditya and letter D represents the win of Danish. 
-        You need to find out the that which player wins the maximum number of games or there is a draw between them.</h3>
-    <h3>Source Code:</h3>
-    <pre>
+  <h3>6. You are given a string S consisting of two letters A and D,where each character represent the winner of N games
+    played between Aditya and Danish, where letter A represents the win of Aditya and letter D represents the win of
+    Danish.
+    You need to find out the that which player wins the maximum number of games or there is a draw between them.</h3>
+  <h3>Source Code:</h3>
+  <pre>
         var Game_Winner = (S) => 
         {
           let a=0;
@@ -112,9 +139,10 @@
           }
         }  
     </pre>
-    <h3>7. You are given two strings S and P, and your task is to concatenate them and return the concatenated string.</h3>
-    <h3>Source Code:</h3>
-    <pre>
+  <h3>7. You are given two strings S and P, and your task is to concatenate them and return the concatenated string.
+  </h3>
+  <h3>Source Code:</h3>
+  <pre>
         const joinStrings = (S, P) => 
         {
           let arr=[];
@@ -125,17 +153,17 @@
           return array;
         };   
     </pre>
-    <h3>8. You are given a string 
-        S
-        , Your task is to check wether the given string is a 
-        Palindrome
-         or not.
-        
-        A Palindrome is a string, which turnout same when read in reverse direction.
-        Example: "naman" is a Palindrome.
-        String can contain both upppercase lowercase letters.</h3>
-    <h3>Source Code:</h3>
-    <pre>
+  <h3>8. You are given a string
+    S
+    , Your task is to check wether the given string is a
+    Palindrome
+    or not.
+
+    A Palindrome is a string, which turnout same when read in reverse direction.
+    Example: "naman" is a Palindrome.
+    String can contain both upppercase lowercase letters.</h3>
+  <h3>Source Code:</h3>
+  <pre>
         var Palin_Check = (str) =>
         {
           let rev="";
@@ -150,12 +178,12 @@
              }
         }  
     </pre>
-    <h3>9. You are given a string 
-        S
-        , Your task is to Reverse the string.
-        String can contain both upppercase lowercase letters. </h3>
-    <h3>Source Code:</h3>
-    <pre>
+  <h3>9. You are given a string
+    S
+    , Your task is to Reverse the string.
+    String can contain both upppercase lowercase letters. </h3>
+  <h3>Source Code:</h3>
+  <pre>
         var Reverse_String = (str) => 
         {
             let rev="";
@@ -165,16 +193,16 @@
             return rev;
         }; 
     </pre>
-    <h3>10. You are given two strings 
-        S1
-         and 
-        S2
-        , Your task is to print 
-        YES
-         if both strings are same else print 
-        NO.</h3>
-    <h3>Source Code:</h3>
-    <pre>
+  <h3>10. You are given two strings
+    S1
+    and
+    S2
+    , Your task is to print
+    YES
+    if both strings are same else print
+    NO.</h3>
+  <h3>Source Code:</h3>
+  <pre>
         var String_Match = (S1,S2) => 
         {
               let str = 'NO';
@@ -191,36 +219,36 @@
             }  
         };  
     </pre>
-    <h3>11. You are given a string 
-        S
-        , along with a pattern string and a text string. 
-        You need to repalce the pattern string in 
-        S
-         to the text string.</h3>
-    <h3>Source Code:</h3>
-    <pre>
+  <h3>11. You are given a string
+    S
+    , along with a pattern string and a text string.
+    You need to repalce the pattern string in
+    S
+    to the text string.</h3>
+  <h3>Source Code:</h3>
+  <pre>
         var Replace = (S, pattern , text) => 
         {
            return S.replace(pattern,text);
         };
     </pre>
-    <h3>12. You are given a string 
-        S
-        , Your task is to split the string with respect to spaces.</h3>
-    <h3>Source Code:</h3>
-    <pre>
+  <h3>12. You are given a string
+    S
+    , Your task is to split the string with respect to spaces.</h3>
+  <h3>Source Code:</h3>
+  <pre>
         var Split_the_string = (S) => 
         {
           const array=S.split(" ");
           return array;
         };  
     </pre>
-    <h3>13. You are given a string 
-        S
-         containing both uppercase and lowercase letters. 
-        You need to find out the number of vowels and the number of consonants in the given string.</h3>
-    <h3>Source Code:</h3>
-    <pre>
+  <h3>13. You are given a string
+    S
+    containing both uppercase and lowercase letters.
+    You need to find out the number of vowels and the number of consonants in the given string.</h3>
+  <h3>Source Code:</h3>
+  <pre>
         var Count_Vowels= (S) => 
         {
           let count=0;
@@ -243,4 +271,5 @@
         };   
     </pre>
 </body>
+
 </html>
